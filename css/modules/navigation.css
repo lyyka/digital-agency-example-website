@@ -48,7 +48,7 @@
         display: block;
     }
 
-    nav > div .links {
+    .navigation-links {
         position: absolute;
         top: 100%;
         left: 0;
@@ -56,5 +56,16 @@
         display: none;
         background-color: white;
         padding: 16px 20px;
+
+        flex-direction: column;
+    }
+
+    .navigation-link + .navigation-link {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .navigation-links.active {
+        display: flex;
     }
 }
