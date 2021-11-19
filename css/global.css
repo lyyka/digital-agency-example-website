@@ -18,6 +18,10 @@ html, body {
     margin: 0;
 }
 
+img {
+    max-width: 100%;
+}
+
 h1,
 h2,
 h3,
@@ -28,11 +32,44 @@ h6 {
     margin-bottom: 10px;
 }
 
+h2 {
+    font-size: 48px;
+    line-height: 54px;
+}
+
+h3 {
+    font-size: 36px;
+    line-height: 42px; 
+}
+
+@media screen and (max-width: 991px) {
+    h2 {
+        font-size: 36px;
+        line-height: 42px;
+    }
+
+    h3 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+}
+
 p {
     color: black;
+    margin-top: 0;
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 10px;
+}
+
+ul.reset-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.centered {
+    text-align: center;
 }
 
 /*
@@ -40,6 +77,7 @@ p {
 */
 
 .container {
+    position: relative;
     margin: 0 auto;
     width: 1170px;
     max-width: 100%;
@@ -59,9 +97,48 @@ p {
     background: white;
 }
 
+.section.grey {
+    background: #f8f8f8;
+}
+
+.section-title {
+    margin-bottom: 50px;
+}
+
+.section-title + .section-subtitle {
+    margin-top: -40px;
+}
+
+/*
+    Call to action
+*/
+a.cta {
+    padding: 18px 24px;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+}
+
+a.cta:hover {
+    text-decoration: none;
+}
+
+a.cta.with-arrow {
+    display: inline-flex;
+    align-items: center;
+}
+
+a.cta.with-arrow img {
+    height: 24px;
+    margin-left: 24px;
+}
+
 /*
     Colors
 */
 .text-primary {
-    color: rgb(203, 86, 233);
+    color: #cb56e9;
 }

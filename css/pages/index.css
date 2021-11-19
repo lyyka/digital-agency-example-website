@@ -1,3 +1,83 @@
 .hero {
     background-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%), url('../../images/index-hero.jpg');
 }
+
+/*
+    Why us?
+*/
+
+.why-us-section-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 30px;
+}
+
+.why-us-section-block {   
+    padding: 36px;
+    max-width: 100%;
+    margin-bottom: 36px;
+}
+
+.why-us-section-block.yellow {
+    background: #e8eb57;
+}
+
+.why-us-section-block.blue {
+    background: #5797eb;
+}
+
+.why-us-section-block.green {
+    background: #57eb6d;
+}
+
+@media screen and (max-width: 991px) {
+    .why-us-section-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*
+    How we help
+*/
+.how-we-help-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.how-we-help-wrapper .section-title {
+    width: 480px;
+}
+
+.how-we-help-wrapper > .how-we-help-image {
+    margin-left: 36px;
+}
+
+.how-we-help-wrapper > .how-we-help-image img {
+    max-height: 920px;
+}
+
+.how-we-help-wrapper .how-we-help-item {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.how-we-help-wrapper .how-we-help-item img {
+    height: 24px;
+    margin-right: 12px;
+}
+
+@media screen and (max-width: 991px) {
+    .how-we-help-wrapper {
+        flex-direction: column;
+    }
+
+    .how-we-help-wrapper .section-title {
+        width: 100%;
+    }
+
+    .how-we-help-wrapper > .how-we-help-image {
+        margin-left: 0;
+    }
+}
