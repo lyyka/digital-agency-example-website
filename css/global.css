@@ -1,0 +1,67 @@
+/*
+    Font settings
+*/
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@400;500;600&display=swap');
+
+
+/*
+    General style
+*/
+
+* {
+    box-sizing: border-box;
+    font-family: 'M PLUS 2', sans-serif;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+p {
+    color: black;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+
+/*
+    Style the container for width
+*/
+
+.container {
+    margin: 0 auto;
+    width: 1170px;
+    max-width: 100%;
+}
+
+@media screen and (max-width: 1170px) {
+    .container {
+        padding: 0 20px;
+    }
+}
+
+/*
+    Style for regular sections
+*/
+.section {
+    padding: 120px 0;
+    background: white;
+}
+
+/*
+    Colors
+*/
+.text-primary {
+    color: rgb(203, 86, 233);
+}
