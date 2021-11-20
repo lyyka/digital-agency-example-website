@@ -5,8 +5,308 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontaktiraj nas</title>
+
+    <link rel="stylesheet" href="./../css/modules/contact-us.css" />
+    <link rel="stylesheet" href="./../css/modules/footer.css" />
+    <link rel="stylesheet" href="./../css/modules/navigation.css" />
+    <link rel="stylesheet" href="./../css/modules/hero.css" />
+    <link rel="stylesheet" href="./../css/modules/underline.css" />
+    
+    <link rel="stylesheet" href="./../css/global.css" />
+    <link rel="stylesheet" href="./../css/colors.css" />
+
+    <link rel="stylesheet" href="./../css/pages/contact.css" />
 </head>
 <body>
+    <nav>
+        <div id="navigation">
+            <div id="navigation-inner-wrapper" class="container">
+                <div>
+                    <img class="navigation-logo" alt="logo" src="./../images/logo.png" />
+                </div>
+                <div class="navigation-links">
+                    <a class="navigation-link text-eerie-black" href="./../index.html">
+                        Početna strana
+                    </a>
+                    <a class="navigation-link text-eerie-black" href="./../pages/about.html">
+                        O nama
+                    </a>
+                    <a class="navigation-link text-eerie-black active" href="./../pages/contact.html">
+                        Kontaktiraj nas
+                    </a>
+                </div>
+                <div id="open-menu">
+                    <div class="background-eerie-black"></div>
+                    <div class="background-eerie-black"></div>
+                    <div class="background-eerie-black"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Tu smo za sva tvoja pitanja</h1>
+                    <p>Ukoliko želiš da realizuješ svoju ideju, poboljšaš svoje poslovanje i digitalizuješ ga, ili jednostavno imaš neko drugo pitanje, slobodno nam pošalji poruku.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="container">
+                <h2 class="section-title">
+                    Kontaktiraj nas
+                </h2>
+                <p class="section-subtitle">
+                    Popunjavanjem forme ispod kontaktiraćeš naš tim direktno, koji će se potruditi da na sva tvoja pitanja odgovori u najkraćem mogućem roku
+                </p>
+
+                <form id="contact-form" method="GET" action="#">
+                    <div class="contact-form-section">
+                        <h4>
+                            1. Zašto nas kontaktirate?
+                        </h4>
+                        <p>
+                            Ova informacija nam pomaže da što bolje razvrstamo zahteve, u cilju što bržeg i relevantnijeg odgovora
+                        </p>
+                        <div class="input-group">
+                            <select id="service_type" name="service_type" data-placeholder="Razlog za kontakt">
+                                <option value="work">Želim da poboljšam svoje digitalno prisustvo</option>
+                                <option value="careers">Želim da pošaljem upit u vezi otvorenih pozicija</option>
+                                <option value="support">Korisnička podrška</option>
+                                <option value="complaint">Žalba</option>
+                                <option value="other">Drugo</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-section">
+                        <h4>
+                            2. Tvoji podaci
+                        </h4>
+                        <p>
+                            Ova informacija nam je potrebna kako bi mogli da te kontaktiramo nazad
+                        </p>
+
+                        <div class="radio-group">
+                            <label for="individual_type" class="custom-radio">
+                                <input 
+                                    type="radio"
+                                    id="individual_type"
+                                    name="individual_type"
+                                    value="individual"
+                                    data-placeholder="Tip"
+                                    checked
+                                />
+                                <span>Fizičko lice</span>
+                                <!-- <span class="radio-check"></span> -->
+                            </label>
+                            <label for="company_type" class="custom-radio">
+                                <input 
+                                    type="radio"
+                                    id="company_type"
+                                    name="individual_type"
+                                    data-placeholder="Tip"
+                                    value="company"
+                                />
+                                <span>Firma</span>
+                                <!-- <span class="radio-check"></span> -->
+                            </label>
+                        </div>
+                        <div class="input-grid grid--2">
+                            <div>
+                                <div class="input-group">
+                                    <input 
+                                        type="text"
+                                        id="first_name"
+                                        name="first_name"
+                                        placeholder="Ime"
+                                    />
+                                </div>
+                            </div>
+                            <div>
+                                <div class="input-group">
+                                    <input 
+                                        type="text"
+                                        id="last_name"
+                                        name="last_name"
+                                        placeholder="Prezime"
+                                    />
+                                </div>
+                            </div>
+                        </div>
     
+                        <div class="input-grid grid--2">
+                            <div>
+                                <div class="input-group">
+                                    <input 
+                                        type="text"
+                                        id="phone_number"
+                                        name="phone_number"
+                                        placeholder="Broj telefona"
+                                    />
+                                </div>
+                            </div>
+                            <div>
+                                <div class="input-group">
+                                    <input 
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        placeholder="Email adresa"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div id="contact-us-company-data" style="display: none;" class="input-grid grid--2">
+                            <div>
+                                <div class="input-group">
+                                    <input 
+                                        type="text"
+                                        id="company_name"
+                                        name="company_name"
+                                        placeholder="Naziv kompanije"
+                                    />
+                                </div>
+                            </div>
+                            <div>
+                                <div class="input-group">
+                                    <input 
+                                        type="text"
+                                        id="pib"
+                                        name="pib"
+                                        placeholder="PIB"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-section">
+                        <h4>
+                            3. Poruka
+                        </h4>
+                        <p>
+                            Ovde možeš detaljno opisati svoje zahteve
+                        </p>
+
+    
+                        <div class="input-group">
+                            <textarea
+                                rows="8"
+                                id="message"
+                                name="message"
+                                placeholder="Poruka"
+                            ></textarea>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-section">
+                        <button id="contact-us-button" type="button" class="cta background-eerie-black">
+                            Pošalji upit
+                        </button>
+                    </div>
+                </form>
+
+                <div style="display: none;" id="contact-form-success">
+                    <h4 class="title">
+                        Tvoji podaci su uspešno prosleđeni našem timu!
+                        <img 
+                            src="./../images/icons/success.png"
+                        />
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer background-eerie-black">
+            <div class="container">
+                <div class="footer-wrapper">
+                    <div>
+                        <img 
+                            src='./../images/logo.png'
+                            alt="Logo"
+                        />
+                    </div>
+                    <div>
+                        <h5 class="footer-column-heading">
+                            Kompanija
+                        </h5>
+                        <a href="./../index.html" class="footer-link">
+                            Početna stranica
+                        </a>
+                        <a href="./../pages/about.html" class="footer-link">
+                            O nama
+                        </a>
+                        <a href="./../pages/contact.html" class="footer-link">
+                            Kontaktiraj nas
+                        </a>
+                    </div>
+                    <div>
+                        <h5 class="footer-column-heading">
+                            Karijera
+                        </h5>
+                        <a href="./../pages/open_positions.html" class="footer-link">
+                            Otvorene pozicije
+                        </a>
+                    </div>
+                    <div>
+                        <h5 class="footer-column-heading">
+                            Kontakt informacije
+                        </h5>
+                        <a href="tel:+381651234567" class="footer-link with-icon">
+                            <img 
+                                src='./../images/icons/phone.png'
+                                alt=""
+                            />
+                            <span>
+                                065/ 123 45 67
+                            </sp>
+                        </a>
+                        <a href="mailto:contact@email.com" class="footer-link with-icon">
+                            <img 
+                                src='./../images/icons/email.png'
+                                alt=""
+                            />
+                            <span>
+                                contact@email.com
+                            </span>
+                        </a>
+                        <a href="https://www.google.com/maps/place/Faculty+of+Organizational+Sciences/@44.7727146,20.4728464,17z/data=!4m5!3m4!1s0x475a70576248bf79:0xadaf5cff042d3bd0!8m2!3d44.7726584!4d20.4752276" target="_blank" class="footer-link with-icon">
+                            <img 
+                                src='./../images/icons/location.png'
+                                alt=""
+                            />
+                            <span>
+                                Jove Ilića 154, 11000 Beograd, Srbija
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="footer-link">
+                        © 2021. Naziv kompanije
+                    </p>
+                    <p class="footer-link">
+                        Made with
+                        <img 
+                            id="heart-footer"
+                            src="./../images/icons/fire-heart.png"
+                            alt=""
+                        />
+                        in Serbia
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="/js/navigation.js"></script>
+    <script src="/js/contact.js"></script>
 </body>
-</html>

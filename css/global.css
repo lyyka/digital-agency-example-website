@@ -121,17 +121,27 @@ ul.reset-list {
 /*
     Call to action
 */
-a.cta {
+a.cta, button.cta {
     padding: 18px 24px;
     color: white;
     border-radius: 4px;
     text-decoration: none;
     font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
     display: inline-block;
 }
 
-a.cta:hover {
+button.cta {
+    border: 0;
+}
+
+a.cta:hover, button.cta:hover {
     text-decoration: none;
+}
+
+button.cta:hover {
+    cursor: pointer;
 }
 
 a.cta.with-arrow {
@@ -142,4 +152,105 @@ a.cta.with-arrow {
 a.cta.with-arrow img {
     height: 24px;
     margin-left: 24px;
+}
+
+/* Input fields */
+.input-grid {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-gap: 16px;
+}
+
+.input-grid.grid--2 {
+    grid-template-columns: 1fr 1fr;
+}
+
+.input-grid + .input-grid, .input-grid + .input-group {
+    margin-top: 16px;
+}
+
+@media screen and (max-width: 768px) {
+    .input-grid.grid--2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.input-group input, .input-group textarea, .input-group select {
+    padding: 14px 16px;
+    border-radius: 4px;
+    border: 1px solid #e5e5e5;
+    color: #191919ff;
+    outline: none;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+    background: white;
+}
+
+.input-group textarea {
+    resize: none;
+}
+
+.input-group p.error {
+    margin-top: 8px;
+    display: none;
+}
+
+.input-group input:focus, .input-group textarea:focus {
+    border: 1px solid #ffaa5aff;
+}
+
+.input-group input.invalid, .input-group textarea.invalid, .input-group select.invalid {
+    border: 1px solid red;
+}
+
+.input-group + .input-group, .input-group + .input-grid {
+    margin-top: 16px;
+}
+
+.radio-group {
+    margin: 16px 0;
+}
+
+.custom-radio {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 24px;
+}
+
+.custom-radio:hover {
+    cursor: pointer;
+}
+
+.custom-radio input[type="radio"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    appearance: none;
+    /* For iOS < 15 to remove gradient background */
+    background-color: #fff;
+    /* Not removed via appearance */
+    margin: 0;
+}
+
+.custom-radio input[type="radio"]::before {
+    content: "";
+    display: block;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #a5a5a5;
+    border-radius: 3000px;
+}
+
+.custom-radio input[type="radio"]:checked::before {
+    background: #ff785aff;
+}
+
+.custom-radio:hover > input[type="radio"]:not(:checked)::before {
+    background: #ff785a4c;
+}
+
+.custom-radio span {
+    margin-left: 14px;
 }

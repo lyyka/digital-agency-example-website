@@ -1,0 +1,39 @@
+.hero {
+    background-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%), url('./../../images/contact-us-hero.jpg');
+    background-position: left;
+}
+
+@media screen and (max-width: 991px) {
+    .hero {
+        background-position: center;
+    }
+}
+
+#contact-form {
+    margin-top: 48px;
+}
+
+.contact-form-section {
+    margin-bottom: 42px;
+}
+
+.contact-form-section > h4 + p {
+    margin-bottom: 32px;
+}
+
+#contact-form-success {
+    margin-top: 48px;
+    padding: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 16px;
+}
+
+#contact-form-success .title {
+    display: flex;
+    align-items: center;
+}
+
+#contact-form-success .title img {
+    height: 36px;
+    margin-left: 16px;
+}
