@@ -65,11 +65,33 @@ h4 {
 }
 
 p {
+    display: flex;
+    align-items: center;
     color: #191919ff;
     margin-top: 0;
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 10px;
+}
+
+a {
+    color: #191919ff;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+
+a img {
+    height: 24px;
+    margin-left: 12px;
+}
+
+a:hover {
+    color: #ff785aff;
+}
+
+a.no-underline {
+    text-decoration: none;
 }
 
 ul.reset-list {

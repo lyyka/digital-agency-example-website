@@ -1,4 +1,4 @@
 .underline-primary {
     background: #ffaa5aff;
-    background: linear-gradient(0deg, #ffaa5aff 0%, #ffaa5aff 50%, rgba(255,255,255,0) 50%, rgba(201,0,255,0) 100%);    
+    background: linear-gradient(0deg, #ffaa5aff 0%, #ffaa5aff 35%, rgba(255,255,255,0) 35%, rgba(201,0,255,0) 100%);    
 }

@@ -53,6 +53,29 @@
     background-color: #ffaa5a4c;
 }
 
+.open-position-card .open-position-card-content {
+    display: none;
+}
+
+.open-position-card .open-position-card-content.visible {
+    display: block;
+}
+
+.open-position-card .open-position-card-content li {
+    display: flex;
+    align-items: center;
+}
+
+.open-position-card .open-position-card-content li:before {
+    content: "";
+    display: inline-block;
+    height: 8px;
+    width: 8px;
+    border-radius: 3000px;
+    background: #ffd25aff;
+    margin-right: 12px;
+}
+
 @media screen and (max-width: 320px) {
     .open-position-location-title:after {
         width: 48px;

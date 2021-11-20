@@ -66,19 +66,26 @@
                 <form id="contact-form" method="GET" action="#">
                     <div class="contact-form-section">
                         <h4>
-                            1. Zašto nas kontaktirate?
+                            1. Zašto želiš da nas kontaktiraš?
                         </h4>
                         <p>
                             Ova informacija nam pomaže da što bolje razvrstamo zahteve, u cilju što bržeg i relevantnijeg odgovora
                         </p>
                         <div class="input-group">
                             <select id="service_type" name="service_type" data-placeholder="Razlog za kontakt">
-                                <option value="work">Želim da poboljšam svoje digitalno prisustvo</option>
+                                <option value="work" selected>Želim da unapredim svoje digitalno prisustvo</option>
                                 <option value="careers">Želim da pošaljem upit u vezi otvorenih pozicija</option>
                                 <option value="support">Korisnička podrška</option>
                                 <option value="complaint">Žalba</option>
                                 <option value="other">Drugo</option>
                             </select>
+
+                            <a id="careers_service_type" style="display: none;" href="./open_positions.html">
+                                Pogledaj sve otvorene pozicije u našoj kompaniji i saznaj kako da se prijaviš. 
+                                <img 
+                                    src="../images/icons/right-arrow-regular-black.png"
+                                />
+                            </a>
                         </div>
                     </div>
 
@@ -307,6 +314,6 @@
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="./../js/navigation.js"></script>
-    <script src="./../js/contact.js"></script>
+    <script src="./../js/modules/navigation.js"></script>
+    <script type="module" src="./../js/pages/contact.js"></script>
 </body>
