@@ -5,7 +5,7 @@
 
 @media screen and (max-width: 991px) {
     .hero {
-        background-position: center;
+        background-position: right;
     }
 }
 
@@ -19,6 +19,15 @@
 
 .contact-form-section > h4 + p {
     margin-bottom: 32px;
+}
+
+.contact-us-service-type-note {
+    display: none;
+    margin-top: 12px;
+}
+
+.contact-us-service-type-note img {
+    margin-left: 24px;
 }
 
 #contact-form-success {

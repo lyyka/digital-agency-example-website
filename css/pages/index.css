@@ -30,6 +30,16 @@
     .why-us-section-grid {
         grid-template-columns: 1fr;
     }
+
+    .why-us-section-block {   
+        padding: 24px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .why-us-section-block {   
+        padding: 16px;
+    }
 }
 
 /*
@@ -74,5 +84,18 @@
 
     .how-we-help-wrapper > .how-we-help-image {
         margin-left: 0;
+        width: 100%;
+    }
+
+    .how-we-help-wrapper > .how-we-help-image img {
+        width: 100%;
+        height: 640px;
+        object-fit: cover;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .how-we-help-wrapper > .how-we-help-image img {
+        height: 480px;
     }
 }
