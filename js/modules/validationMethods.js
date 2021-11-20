@@ -1,3 +1,7 @@
+/**
+ * Get all validation functions
+ * @returns Object
+ */
 const getValidators = () => {
     return {
         /**
@@ -42,7 +46,7 @@ const getValidators = () => {
 }
 
 /**
- * 
+ * Validate specific field
  * @param {*} field 
  * @param {*} validationRules 
  * @param {boolean} silent 
@@ -128,6 +132,26 @@ const validateForm = (form, validationRules, silent = false) => {
     return { formData, formIsValid };
 };
 
+const rules = {
+    /**
+     * Generate 'in' validation rule string
+     * @param {Array} values 
+     */
+    in: (values) => {
+        if(Array.isArray(values)) {
+            return "in:" + values.join(',');
+        }
+
+        console.error(`${values} is not an array.`);
+        return "";
+    },
+
+    required: () => { return "required" },
+    string: () => { return "string" },
+    email: () => { return "email" },
+};
+
 export {
-    validateForm
+    validateForm,
+    rules,
 }; 

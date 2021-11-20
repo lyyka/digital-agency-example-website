@@ -1,4 +1,4 @@
-import { validateForm } from "./../modules/validationMethods.js";
+import { validateForm, rules } from "./../modules/validationMethods.js";
 import { isCompany } from "./../modules/utils.js";
 
 
@@ -40,21 +40,23 @@ $(document).ready(function() {
  * @returns Object
  */
 function getValidationRules() {
+    const serviceTypeOptions = ['work', 'careers', 'support', 'complaint', 'other'];
+    const individualTypeOptions = ['individual', 'company'];
     let result = {
-        'service_type': ["required", "in:work,careers,support,complaint,other"],
-        'individual_type': ["required", "in:individual,company"],
-        'first_name': ["required", "string"],
-        'last_name': ["required", "string"],
-        'phone_number': ["required", "string"],
-        'email': ["required", "email"],
-        'message': ["required", "string"],
+        'service_type': [rules.required(), rules.in(serviceTypeOptions)],
+        'individual_type': [rules.required(), rules.in(individualTypeOptions)],
+        'first_name': [rules.required(), rules.string()],
+        'last_name': [rules.required(), rules.string()],
+        'phone_number': [rules.required(), rules.string()],
+        'email': [rules.required(), rules.email()],
+        'message': [rules.required(), rules.string()],
     };
     const individualTypeCheck = $("input[name=individual_type]:checked");
     if(isCompany(individualTypeCheck.val())) {
         result = {
             ...result,
-            'company_name': ['required', 'string'],
-            'pib': ['required', 'string'],
+            'company_name': [rules.required(), rules.string()],
+            'pib': [rules.required(), rules.string()],
         }
     }
     return result;
