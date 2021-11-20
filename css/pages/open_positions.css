@@ -1,0 +1,76 @@
+.hero {
+    background-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%), url('/images/open-positions-hero.jpg');
+    background-position: center;
+}
+
+@media screen and (max-width: 991px) {
+    .hero {
+        background-position: right;
+    }
+}
+
+/*Open position  cards*/
+.open-position-group {
+    margin-top: 64px;
+}
+
+.open-position-location-title {
+    display: flex;
+    align-items: center;
+}
+
+.open-position-location-title:after {
+    content: "";
+    width: 96px;
+    height: 3px;
+    border-radius: 3000px;
+    background-color: #ffaa5aff;
+    margin-left: 24px;
+}
+
+.open-position-location-title img {
+    height: 38px;
+    margin-right: 12px;
+}
+
+.open-position-card {
+    padding: 16px 24px;
+    border-radius: 16px;
+    margin-top: 36px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    align-items: flex-start;
+    transition: all 0.3s ease-in-out;
+}
+
+.open-position-card img {
+    margin-right: 24px;
+    height: 42px;
+}
+
+.open-position-card:hover {
+    cursor: pointer;
+    background-color: #ffaa5a4c;
+}
+
+@media screen and (max-width: 320px) {
+    .open-position-location-title:after {
+        width: 48px;
+    }
+}
+
+/*Join us*/
+.join-us-section-contact {
+    display: flex;
+    align-items: center;
+    font-size: 32px;
+    line-height: 48px;
+    margin-top: 24px;
+    color: #191919ff;
+    text-decoration: none;
+}
+
+.join-us-section-contact img {
+    margin-right: 12px;
+    height: 48px;
+}

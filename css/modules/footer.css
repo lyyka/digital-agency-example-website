@@ -1,6 +1,5 @@
 .footer {
-    padding: 120px 0;
-    background-color: black;
+    padding: 120px 0 40px 0;
 }
 
 .footer a {
@@ -12,10 +11,15 @@
     color: white;
     text-decoration: none;
     display: block;
+    transition: all 0.3s ease-in-out;
 }
 
 .footer .footer-wrapper .footer-link + .footer-link {
     margin-top: 16px;
+}
+
+.footer .footer-wrapper .footer-link:hover {
+    transform: translateX(2px);
 }
 
 .footer .footer-link.with-icon {
@@ -43,7 +47,7 @@
 }
 
 .footer-bottom {
-    margin-top: 48px;
+    margin-top: 64px;
     display: flex;
     justify-content: space-between;
     color: white;

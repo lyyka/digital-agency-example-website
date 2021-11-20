@@ -3,7 +3,6 @@
 */
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@400;500;600&display=swap');
 
-
 /*
     General style
 */
@@ -28,6 +27,7 @@ h3,
 h4,
 h5,
 h6 {
+    color: #191919ff;
     margin-top: 0;
     margin-bottom: 10px;
 }
@@ -38,24 +38,34 @@ h2 {
 }
 
 h3 {
-    font-size: 36px;
-    line-height: 42px; 
+    font-size: 40px;
+    line-height: 46px; 
+}
+
+h4 {
+    font-size: 32px;
+    line-height: 38px;
 }
 
 @media screen and (max-width: 991px) {
     h2 {
-        font-size: 36px;
-        line-height: 42px;
+        font-size: 40px;
+        line-height: 46px;
     }
 
     h3 {
+        font-size: 32px;
+        line-height: 38px;
+    }
+
+    h4 {
         font-size: 24px;
         line-height: 30px;
     }
 }
 
 p {
-    color: black;
+    color: #191919ff;
     margin-top: 0;
     font-size: 16px;
     line-height: 24px;
@@ -113,7 +123,6 @@ ul.reset-list {
 */
 a.cta {
     padding: 18px 24px;
-    background-color: black;
     color: white;
     border-radius: 4px;
     text-decoration: none;
@@ -133,11 +142,4 @@ a.cta.with-arrow {
 a.cta.with-arrow img {
     height: 24px;
     margin-left: 24px;
-}
-
-/*
-    Colors
-*/
-.text-primary {
-    color: #cb56e9;
 }
