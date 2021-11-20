@@ -69,11 +69,18 @@
 .open-position-card .open-position-card-content li:before {
     content: "";
     display: inline-block;
-    height: 8px;
-    width: 8px;
+    min-height: 8px;
+    min-width: 8px;
     border-radius: 3000px;
     background: #ffd25aff;
     margin-right: 12px;
+}
+
+@media screen and (max-width: 476px) {
+    .open-position-card img {
+        margin-right: 8px;
+        height: 28px;
+    }
 }
 
 @media screen and (max-width: 320px) {
@@ -96,4 +103,27 @@
 .join-us-section-contact img {
     margin-right: 12px;
     height: 48px;
+}
+
+@media screen and (max-width: 768px) {
+    .join-us-section-contact {
+        font-size: 26px;
+        line-height: 42px;
+    }
+
+    .join-us-section-contact img {
+        height: 42px;
+    }
+}
+
+@media screen and (max-width: 476px) {
+    .join-us-section-contact {
+        font-size: 22px;
+        line-height: 38px;
+    }
+
+    .join-us-section-contact img {
+        margin-right: 6px;
+        height: 38px;
+    }
 }

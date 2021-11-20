@@ -24,6 +24,7 @@
     padding: 36px;
     max-width: 100%;
     margin-bottom: 36px;
+    border-radius: 4px;
 }
 
 @media screen and (max-width: 991px) {
@@ -60,6 +61,7 @@
 }
 
 .how-we-help-wrapper > .how-we-help-image img {
+    border-radius: 4px;
     max-height: 920px;
 }
 

@@ -1,6 +1,11 @@
-#navigation {
+nav {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
+    left: 0;
+}
+
+#navigation {
     background-color: white;
     padding: 24px 0;
     -webkit-box-shadow: 0px 1px 21px 5px rgba(0,0,0,0.23); 
@@ -41,14 +46,27 @@
     display: none;
 }
 
+#open-menu:hover {
+    cursor: pointer;
+}
+
 #open-menu div {
     height: 2px;
     width: 32px;
     border-radius: 3000px;
+    transition: all 0.3s ease-in-out;
 }
 
 #open-menu div + div {
     margin-top: 8px;
+}
+
+#open-menu.active > div:first-of-type {
+    transform: rotate(45deg);
+}
+
+#open-menu.active div:last-of-type {
+    transform: rotate(-45deg) translateX(8px) translateY(-6px);
 }
 
 @media screen and (max-width: 576px) {
