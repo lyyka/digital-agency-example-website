@@ -48,29 +48,45 @@ const validationFunctions = {
     
     // Between two values
     between: (value, values) => {
-        return value >= values[0] && value <= values[1];
+        const numVal = Number(value);
+        return numVal >= values[0] && numVal <= values[1];
     },
     
     // Greater
     gt: (value, comparisonValue) => {
-        return value > comparisonValue[0]
+        return Number(value) > comparisonValue[0]
     },
 
     // Greater or equal
     gte: (value, comparisonValue) => {
-        return value >= comparisonValue[0];
+        return Number(value) >= comparisonValue[0];
     },
     
     // Less then
     lt: (value, comparisonValue) => {
-        return value > comparisonValue[0];
+        return Number(value) > comparisonValue[0];
     },
 
     // Less then or equal
     lte: (value, comparisonValue) => {
-        return value >= comparisonValue[0];
+        return Number(value) >= comparisonValue[0];
     },
 }
+
+/**
+ * Defines default validation failure messages for each validation rule
+ */
+const defaultValidationMessages = {
+    "required": (fieldName) => `${fieldName} field is required`,
+    "string": (fieldName) => `${fieldName} must be string`,
+    "email": (fieldName) => `${fieldName} must be an email string`,
+    "in": (fieldName) => `${fieldName} value is invalid`,
+    "between": (fieldName, params) => `${fieldName} value must be between ${params[0]} and ${params[1]}`,
+    "gt": (fieldName, params) => `${fieldName} value must be greater then ${params[0]}`,
+    "gte": (fieldName, params) => `${fieldName} value must be greater then or equal to ${params[0]}`,
+    "lt": (fieldName, params) => `${fieldName} value must be greater then ${params[0]}`,
+    "lte": (fieldName, params) => `${fieldName} value must be less then or equal to ${params[0]}`,
+};
 
 /**
  * Validate specific field
@@ -79,13 +95,22 @@ const validationFunctions = {
  * @param {boolean} silent Defines if validation should be silent, meaning that fields will not be highlighted on frontend
  * @returns 
  */
-const validateField = (field, validationRules, silent = false) => {
+const validateField = (field, validationRules, validationMessages = {}, silent = false) => {
     const name = field.getAttribute('name');
 
     // Make each field valid again, so red outline does not persist
     if(!silent) {
+        const removeExistingValidationErrorLabel = function(field) {
+            const existingValidationErrorMessage = field.parentNode.querySelector('[data-is-validation-error]');
+            if(existingValidationErrorMessage) {
+                existingValidationErrorMessage.parentNode.removeChild(existingValidationErrorMessage);
+            }
+        };
+
+        removeExistingValidationErrorLabel(field);
         field.classList.remove('invalid');
         field.addEventListener('input', function() {
+            removeExistingValidationErrorLabel(field);
             field.classList.remove('invalid');
         });
     }
@@ -103,28 +128,38 @@ const validateField = (field, validationRules, silent = false) => {
 
         // Go through each rule and validate the fields value against them
         for(const rule of validation) {
+            let validatorName = rule;
+            let parametersForValidator = undefined;
+
             if(rule.includes(":")) { // Handle parametrized rules with ':' that need to be split into fn (before ':') and parameters (after ':')
                 const parts = rule.split(":");
-                const validatorName = parts[0];
-                const fn = validationFunctions[validatorName];
-                if(fn) {
-                    const values = parts[1].split(',');
-                    isValid = fn(field.value, values);
-                } else {
-                    throw new Error(`Parametrized validator '${validatorName}' does not exist!`);
-                }
+                validatorName = parts[0];
+                parametersForValidator = parts[1].split(',');
+            }
+            
+            const fn = validationFunctions[validatorName];
+            if(fn) {
+                isValid = fn(field.value, parametersForValidator);
             } else {
-                // Handle simple rules (one word = validator name)
-                const fn = validationFunctions[rule];
-                if(fn) {
-                    isValid = fn(field.value);
-                } else {
-                    throw new Error(`Validator '${rule}' does not exist!`);
-                }
+                throw new Error(`Validator '${validatorName}' does not exist!`);
             }
 
             // Break as soon as possible if invalid, do not check other validators
             if(!isValid) {
+                if(!silent) {
+                    let readableName = name.split('_').join(" "); // field_name -> field name
+                    readableName = readableName.charAt(0).toUpperCase() + readableName.slice(1); // capitalize the name
+                    const customMessage = validationMessages[name] ? validationMessages[name][validatorName] : undefined;
+                    const finalMessage = customMessage || defaultValidationMessages[validatorName](readableName, parametersForValidator); // get the translation based on validator name if custom message is not defined
+
+                    // Create error message
+                    const textNode = document.createElement('p');
+                    textNode.setAttribute('data-is-validation-error', '1');
+                    textNode.style.color = 'red';
+                    textNode.innerText = finalMessage;
+                    field.parentNode.appendChild(textNode);
+                }
+
                 break;
             }
         }
@@ -153,13 +188,13 @@ const getFieldsToValidateFromForm = (form) => {
 }
 
 /**
- * Validates whole form, given as html DOM element, and not jQuery object
+ * Validates whole form, given as HTML element
  * @param {HTMLElement} form 
  * @param {Object} validationRules 
  * @param {boolean} silent 
  * @returns 
  */
-const validateForm = (form, validationRules, silent = false) => {
+const validateForm = (form, validationRules, validationMessages = {}, silent = false) => {
     const formData = []; // Data that gets submitted after validation
     const fieldsToSend = getFieldsToValidateFromForm(form);
     let formIsValid = true; // Form valid check
@@ -167,7 +202,7 @@ const validateForm = (form, validationRules, silent = false) => {
     // Validate each field in form against defined validation rules
     for(let i = 0; i < fieldsToSend.length; i++) {
         const field = fieldsToSend[i];
-        if(!validateField(field, validationRules, silent)) {
+        if(!validateField(field, validationRules, validationMessages, silent)) {
             formIsValid = false;
             if(!silent) {
                 field.classList.add('invalid');

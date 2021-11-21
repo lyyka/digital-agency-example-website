@@ -62,6 +62,34 @@ function getValidationRules() {
     return result;
 }
 
+function getValidationMessages() {
+    const requiredString = {
+        required: "Ovo polje je obavezno",
+        string: "Ovo polje mora biti u formatu teksta",
+    };
+
+    return {
+        service_type: {
+            required: "Ovo polje je obavezno",
+            in: "Izabrana vrednost nije validna",
+        },
+        individual_type: {
+            required: "Ovo polje je obavezno",
+            in: "Izabrana vrednost nije validna",
+        },
+        first_name: requiredString,
+        last_name: requiredString,
+        phone_number: requiredString,
+        email: {
+            required: "Ovo polje je obavezno",
+            email: "Ovo polje mora biti u formatu email-a",
+        },
+        message: requiredString,
+        company_name: requiredString,
+        pib: requiredString,
+    };
+};
+
 /**
  * Alter the page to show valid response after form "submission"
  * @param {*} formData
@@ -101,7 +129,7 @@ function validateContactUsForm() {
     const form = $("#contact-form");
 
     // Converts the form to html dom element, as validator works with vanilla js
-    const { formData, formIsValid } = validateForm(form[0], getValidationRules());
+    const { formData, formIsValid } = validateForm(form[0], getValidationRules(), getValidationMessages());
 
     // If form is valid after all fields have been processed, show the results
     if(formIsValid) {
