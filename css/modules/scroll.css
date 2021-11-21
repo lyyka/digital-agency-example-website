@@ -1,0 +1,34 @@
+#scroll-to-top-button {
+    cursor: pointer;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all .5s ease;
+
+    border-radius: 3000px;
+    background-color: #191919ff;
+    padding: 8px;
+    border: 1px solid white;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#scroll-to-top-button img {
+    height: 24px;
+}
+
+#scroll-to-top-button.white {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#scroll-to-top-button.show {
+    opacity: 1;
+    transform: translateY(0);
+}

@@ -57,7 +57,11 @@
     height: 24px;
 }
 
-@media screen and (max-width: 781px) {
+@media screen and (max-width: 768px) {
+    .footer-bottom {
+        margin-top: 0;
+    }
+
     .footer-wrapper {
         grid-template-columns: 1fr;
     }
@@ -67,7 +71,7 @@
     }
 }
 
-@media screen and (max-width: 472px) {
+@media screen and (max-width: 476px) {
     .footer-bottom {
         flex-direction: column;
     }

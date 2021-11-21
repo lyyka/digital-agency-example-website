@@ -27,7 +27,7 @@ nav {
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.15s ease-in-out;
 }
 
 .navigation-link:hover {
@@ -54,7 +54,7 @@ nav {
     height: 2px;
     width: 32px;
     border-radius: 3000px;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.1s ease-in-out;
 }
 
 #open-menu div + div {
