@@ -85,15 +85,14 @@ function showValidResponse(formData) {
     const monthNames = [
         'Januar', 'Februar', 'Mart', 'April', 'Maj', 'Jun', 'Jul', 'Avgust', 'Septembar', 'Oktobar', 'Novembar', 'Decembar'
     ]
-    const day = todaysDate.getDay();
+    const day = (todaysDate.getDate() < 10 ? '0' : '') + todaysDate.getDate();
     const month = todaysDate.getMonth();
     const monthText = monthNames[month]; // We can do this as 'getMonth()' returns months zero-based index
     const year = todaysDate.getFullYear();
-    const hour = todaysDate.getHours();
-    const minutes = todaysDate.getMinutes();
+    const hour = (todaysDate.getHours() < 10 ? '0' : '') + todaysDate.getHours();
+    const minutes = (todaysDate.getMinutes() < 10 ? '0' : '') + todaysDate.getMinutes();
 
-    success.append(`<strong><p>
-    Prosleđeno dana: ${day}. ${monthText} ${year} u ${hour}:${minutes} časova</p></strong>`);
+    success.append(`<strong><p>Prosleđeno dana: ${day}. ${monthText} ${year} u ${hour}:${minutes} časova</p></strong>`);
 
     success.slideDown();
 }
@@ -107,6 +106,6 @@ function validateContactUsForm() {
     // If form is valid after all fields have been processed, show the results
     if(formIsValid) {
         form.slideUp(); // Hides the form
-        showValidResponse(formData);
+        showValidResponse(formData); // Shows the response
     }
 }
