@@ -16,40 +16,6 @@
 }
 
 /*
-    Why us?
-*/
-
-.why-us-section-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-gap: 30px;
-}
-
-.why-us-section-block {   
-    padding: 36px;
-    max-width: 100%;
-    margin-bottom: 36px;
-    border-radius: 4px;
-}
-
-@media screen and (max-width: 991px) {
-    .why-us-section-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .why-us-section-block {   
-        padding: 24px;
-    }
-}
-
-@media screen and (max-width: 576px) {
-    .why-us-section-block {   
-        padding: 16px;
-    }
-}
-
-/*
     How we help
 */
 .how-we-help-wrapper {

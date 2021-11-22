@@ -1,0 +1,88 @@
+.hero {
+    background-image: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%), url('./../../images/about-us-hero.jpg');
+    background-position: left;
+}
+
+@media screen and (max-width: 991px) {
+    .hero {
+        background-position: right;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .hero {
+        background-image: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0) 100%), url('./../../images/about-us-hero.jpg');
+    }
+}
+
+#our-mission-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#our-mission-wrapper img {
+    max-height: 420px;
+    margin-right: 48px;
+}
+
+@media screen and (max-width: 991px) {
+    #our-mission-wrapper {
+        flex-wrap: wrap-reverse;
+    }
+    
+    #our-mission-wrapper img {
+        max-height: 320px;
+        margin: 48px auto 0 auto;
+    }
+}
+
+#team-cards-slider--wrapper {
+    position: relative;
+}
+
+.team-cards-slider--control {
+    border: 1px solid #e5e5e5;
+    cursor: pointer;
+    background: white;
+    border-radius: 3000px;
+    padding: 8px;
+    width: 38px;
+    height: 38px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.team-cards-slider--previous {
+    left: 20px;
+}
+
+.team-cards-slider--next {
+    right: 20px;
+}
+
+.team-card {
+    padding: 0 30px;
+}
+
+.team-card--image {
+    height: 320px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px 4px 0 0;
+}
+
+.team-card--content {
+    border: 1px solid #e5e5e5;
+    border-top: 0;
+    padding: 20px;
+    background: white;
+    border-radius: 0 0 4px 4px;
+}
+
+@media screen and (max-width: 480px) {
+    .team-cards-slider--control {
+        display: none;
+    }
+}
