@@ -22,7 +22,7 @@ $(document).ready(function() {
                 settings: {
                     arrows: false,
                     centerMode: true,
-                    centerPadding: '40px',
+                    centerPadding: '10px',
                     slidesToShow: 1
                 }
             }

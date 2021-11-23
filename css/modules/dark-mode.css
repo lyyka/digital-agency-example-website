@@ -46,12 +46,6 @@ body.is-dark .section a.cta, body.is-dark .section button.cta {
     background: white;
 }
 
-/* Separate footer from rest of the page */
-
-body.is-dark .footer {
-    border-top: 1px solid white;
-}
-
 /* Recolor form elements */
 .custom-radio input[type="radio"] {
     background-color: #191919ff !important;

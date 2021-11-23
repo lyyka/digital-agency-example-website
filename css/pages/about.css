@@ -86,4 +86,8 @@
     .team-cards-slider--control {
         display: none;
     }
+
+    .team-card {
+        padding: 0 10px;
+    }
 }
