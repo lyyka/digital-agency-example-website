@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Otvorene pozicije</title>
+    <title>Gradimo tim kreativnih i vrednih ljudi. Pridruži nam se. | Otvorene pozicije</title>
     <meta name="description" content="Ukoliko si u potrazi za poslom, pogledaj otvorene pozicije u našoj kompaniji i prijavi se na konkurs za posao" />
 
     <!-- og: tags for social networks -->
@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="./../css/modules/hero.css" />
     <link rel="stylesheet" href="./../css/modules/underline.css" />
     <link rel="stylesheet" href="./../css/modules/scroll.css" />
+    <link rel="stylesheet" href="./../css/modules/dark-mode.css" />
     
     <link rel="stylesheet" href="./../css/global.css" />
     <link rel="stylesheet" href="./../css/colors.css" />
@@ -31,16 +32,30 @@
                 <div>
                     <img class="navigation-logo" alt="logo" src="./../images/logo.png" />
                 </div>
-                <div class="navigation-links">
-                    <a class="navigation-link text-eerie-black" href="./../index.html">
-                        Početna strana
-                    </a>
-                    <a class="navigation-link text-eerie-black" href="./../pages/about.html">
-                        O nama
-                    </a>
-                    <a class="navigation-link text-eerie-black" href="./../pages/contact.html">
-                        Kontaktiraj nas
-                    </a>
+                <div class="navigation-right-side">
+                    <div class="navigation-links">
+                        <a class="navigation-link text-eerie-black" href="./../index.html">
+                            Početna strana
+                        </a>
+                        <a class="navigation-link text-eerie-black" href="./../pages/about.html">
+                            O nama
+                        </a>
+                        <a class="navigation-link text-eerie-black" href="./../pages/contact.html">
+                            Kontaktiraj nas
+                        </a>
+                    </div>
+                    <div class="view-mode-switch-wrapper">
+                        <img 
+                            class="view-mode-switch dark active"
+                            src="./../images/icons/do-not-disturb-black.png"
+                            alt="Dark mode"
+                        />
+                        <img 
+                            class="view-mode-switch light"
+                            src="./../images/icons/do-not-disturb-white.png"
+                            alt="Light mode"
+                        />
+                    </div>
                 </div>
                 <div id="open-menu">
                     <div class="background-eerie-black"></div>
@@ -236,11 +251,17 @@
                     </p>
                 </div>
                 <a href="./../pages/contact.html" class="cta with-arrow background-eerie-black">
-                    <span>
+                    <span class="is-dark--no-color-change">
                         Stupi u kontakt sa našim timom
                     </span>
                     <img 
+                        class="is-dark--hide"
                         src="./../images/icons/right-arrow-regular-white.png"
+                        alt=""
+                    />
+                    <img 
+                        class="is-dark--show"
+                        src="./../images/icons/right-arrow-regular-black.png"
                         alt=""
                     />
                 </a>
@@ -254,7 +275,6 @@
             />
         </div>
     </main>
-
 
     <footer>
         <div class="footer background-eerie-black">
@@ -339,8 +359,9 @@
         </div>
     </footer>
 
+    <script src="./../js/modules/darkMode.js"></script>
     <script src="./../js/modules/navigation.js"></script>
-    <script src="./../js/pages/open_positions.js"></script>
     <script src="./../js/modules/scroll.js"></script>
+    <script src="./../js/pages/open_positions.js"></script>
 </body>
 </html>

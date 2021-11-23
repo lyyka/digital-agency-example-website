@@ -3,9 +3,11 @@ nav {
     position: sticky;
     top: 0;
     left: 0;
+    z-index: 100;
 }
 
 #navigation {
+    transition: all 0.3s ease-in-out;
     background-color: white;
     padding: 24px 0;
     -webkit-box-shadow: 0px 1px 21px 5px rgba(0,0,0,0.23); 
@@ -20,6 +22,26 @@ nav {
 
 .navigation-logo {
     height: 46px;
+}
+
+.navigation-right-side {
+    display: flex;
+    align-items: center;
+}
+
+.view-mode-switch-wrapper {
+    margin-left: 20px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.view-mode-switch {
+    display: none;
+    cursor: pointer;
+}
+
+.view-mode-switch.active {
+    display: inline-block;
 }
 
 .navigation-link {
