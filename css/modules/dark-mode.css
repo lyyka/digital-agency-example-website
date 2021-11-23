@@ -17,7 +17,7 @@ body.is-dark .section {
     background: #191919ff;
 }
 
-body.is-dark .section *:not(.is-dark--no-color-change):not(input):not(select):not(textarea) {
+body.is-dark .section *:not(.is-dark--no-color-change):not(input):not(select):not(option):not(textarea) {
     color: white;
 }
 
@@ -41,12 +41,16 @@ body.is-dark #open-menu div {
 
 /* Recolor cta buttons */
 
-body.is-dark .section a.cta, body.is-dark .section button.cta {
+body.is-dark .section a.cta {
     color: #191919ff !important;
     background: white;
 }
 
+body.is-dark .section button.cta {
+    background: #ff785aff;
+}
+
 /* Recolor form elements */
-.custom-radio input[type="radio"] {
+body.is-dark .custom-radio input[type="radio"] {
     background-color: #191919ff !important;
 }
