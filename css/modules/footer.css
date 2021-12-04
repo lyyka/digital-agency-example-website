@@ -7,6 +7,10 @@
     text-decoration: none;
 }
 
+.footer-logo {
+    max-height: 240px;
+}
+
 .footer .footer-link {
     color: white;
     text-decoration: none;
@@ -58,6 +62,11 @@
 }
 
 @media screen and (max-width: 768px) {
+    .footer-logo {
+        display: block;
+        margin: 0 auto;
+    }
+
     .footer-bottom {
         margin-top: 0;
     }
